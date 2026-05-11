@@ -1,0 +1,51 @@
+<div class="page" id="page-dashboard">
+
+  <!-- ── CANDIDATE VIEW ─────────────────────────────────────── -->
+  <div id="candidate-view" style="display:none;">
+    <div class="content-card">
+      <div class="card-header" style="display:flex;justify-content:space-between;align-items:center;">
+        <span class="card-title">🎯 Status Pendaftaran Anda</span>
+        <a href="#" id="btn-go-browse" style="font-size:13px;color:var(--primary);text-decoration:none;font-weight:600;">
+          + Lamar Lowongan Lain
+        </a>
+      </div>
+      <div class="card-body">
+
+        <!-- ─ Jadwal interview (muncul jika ada jadwal) ─ -->
+        <div id="interview-schedule-card" style="display:none;background:rgba(106,13,173,0.06);border:1px solid rgba(106,13,173,0.18);border-radius:var(--radius-sm);padding:18px;margin-bottom:24px;">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:#8a2be2;margin-bottom:14px">📅 Jadwal Interview Anda</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;margin-bottom:12px">
+            <div>
+              <div style="color:var(--muted);font-size:11px;font-weight:600;margin-bottom:4px">TANGGAL</div>
+              <div style="font-weight:600" id="itvw-display-date">-</div>
+            </div>
+            <div>
+              <div style="color:var(--muted);font-size:11px;font-weight:600;margin-bottom:4px">WAKTU</div>
+              <div style="font-weight:600" id="itvw-display-time">-</div>
+            </div>
+          </div>
+          <div id="itvw-display-location-wrap" style="display:none;font-size:13px;">
+            <div style="color:var(--muted);font-size:11px;font-weight:600;margin-bottom:4px">TEMPAT / LINK</div>
+            <div id="itvw-display-location" style="font-weight:600;">-</div>
+          </div>
+        </div>
+
+        <!-- ─ Daftar semua lamaran ─ -->
+        <div style="border-top:1px solid var(--border);padding-top:20px;">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);margin-bottom:12px;">
+            📋 Semua Lamaran Anda
+          </div>
+          <div id="all-applications-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ACTIVE USER VIEW (intern / mentor / admin) ─────────── -->
+  <div id="active-view" style="display:none;">
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-card"><div class="stat-value"><span class="loader" style="border-top-color:var(--primary)"></span></div></div>
+    </div>
+    <div class="form-grid" id="dashboard-cards"></div>
+  </div>
+</div>

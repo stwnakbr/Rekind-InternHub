@@ -1,0 +1,39 @@
+<div class="page" id="page-vacancies-candidate">
+  <div class="card-header" style="background:var(--white);border-radius:var(--radius) var(--radius) 0 0;padding:20px 24px;border:1px solid var(--border);border-bottom:none;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <h3 style="font-family:'Syne',sans-serif;font-size:16px;">💼 Lowongan Tersedia</h3>
+      <p style="font-size:12px;color:var(--muted);margin-top:4px">Pilih posisi yang sesuai dan ajukan lamaran Anda</p>
+    </div>
+    <div id="my-applications-btn-wrap">
+      <button class="btn btn-outline" id="btn-my-applications" style="font-size:13px">
+        📋 Lamaran Saya (<span id="app-count">0</span>)
+      </button>
+    </div>
+  </div>
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:0 0 var(--radius) var(--radius);padding:24px;">
+    <div id="vacancies-list-candidate">
+      <div style="text-align:center;padding:40px;color:var(--muted)"><span class="loader"></span></div>
+    </div>
+  </div>
+
+  <!-- Panel lamaran saya -->
+  <div id="my-applications-panel" style="display:none;margin-top:24px;">
+    <div class="content-card" style="margin:0">
+      <div class="card-header"><span class="card-title">📋 Riwayat Lamaran Saya</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Posisi</th>
+              <th>Tanggal Daftar</th>
+              <th>Preferensi Periode</th>
+              <th>Status</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="my-applications-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

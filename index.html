@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rekind InternHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- AUTH SCREEN -->
+<div id="auth-screen">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="auth-logo-icon">🏢</div>
+      <h1>Rekind <span>Intern</span>Hub</h1>
+    </div>
+    <div class="auth-subtitle">
+      <strong>Selamat Datang</strong>
+      Portal manajemen program magang terintegrasi
+    </div>
+
+    <div class="auth-error" id="auth-error"></div>
+
+    <!-- Login -->
+    <div class="field"><label>Email</label><input type="email" id="login-email" placeholder="nama@email.com" autocomplete="off"></div>
+    <div class="field"><label>Password</label><input type="password" id="login-password" placeholder="••••••••" autocomplete="off"></div>
+    <button class="btn-primary" id="btn-login"><span id="login-text">Masuk</span></button>
+
+    <div class="auth-toggle">
+      Belum punya akun? <a id="btn-show-register">Daftar sebagai Kandidat</a>
+    </div>
+
+    <div id="register-panel" style="display:none;margin-top:24px;border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;">
+
+      <div class="field"><label>Nama Lengkap</label><input type="text" id="reg-name" placeholder="Nama lengkap Anda" autocomplete="off"></div>
+      <div class="field"><label>Email</label><input type="email" id="reg-email" placeholder="email@contoh.com" autocomplete="off"></div>
+      <div class="field"><label>No HP</label><input type="tel" id="reg-phone" placeholder="08xxxxxxxxxx" autocomplete="off"></div>
+      <div class="field"><label>Kampus</label><input type="text" id="reg-campus" placeholder="Universitas / Institut" autocomplete="off"></div>
+      <div class="field"><label>Password</label><input type="password" id="reg-password" placeholder="Min. 6 karakter" autocomplete="off"></div>
+
+      <div class="field">
+        <label>Foto (wajib, maks 5MB)</label>
+        <div class="file-upload-zone" id="photo-zone">
+          <input type="file" id="reg-photo" accept="image/*">
+          <div class="file-upload-icon">📷</div>
+          <div class="file-upload-text"><strong>Klik atau seret</strong> foto ke sini</div>
+          <div class="file-preview" id="photo-preview"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>CV (PDF, wajib, maks 5MB)</label>
+        <div class="file-upload-zone" id="cv-zone">
+          <input type="file" id="reg-cv" accept=".pdf,.doc,.docx">
+          <div class="file-upload-icon">📄</div>
+          <div class="file-upload-text"><strong>Klik atau seret</strong> CV ke sini</div>
+          <div class="file-preview" id="cv-preview"></div>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="btn-register"><span id="register-text">Kirim Pendaftaran</span></button>
+      <div class="auth-toggle"><a id="btn-show-login">← Kembali ke Login</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" style="display:none">
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-icon">🏢</div>
+        <span>Rekind <em>Hub</em></span>
+      </div>
+      <div class="sidebar-user">
+        <div class="sidebar-user-name" id="sb-username">-</div>
+        <div class="sidebar-user-role">
+          <span class="role-badge" id="sb-role-badge">-</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav" id="sidebar-nav"></nav>
+      <div class="sidebar-footer">
+        <button class="btn-logout" id="btn-logout">🚪 Keluar</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="topbar">
+        <div class="topbar-left">
+          <h2 id="page-title">Dashboard</h2>
+          <p id="page-subtitle">Selamat datang</p>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-avatar" id="topbar-avatar">?</div>
+        </div>
+      </div>
+
+      <div class="page-content" id="router-view"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal & Toast -->
+<div id="modal-overlay" class="modal-overlay" style="display:none">
+  <div id="modal-box" class="modal"></div>
+</div>
+<div id="toast-container"></div>
+
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>

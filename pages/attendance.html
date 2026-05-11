@@ -1,0 +1,32 @@
+<div class="page" id="page-attendance">
+  <div style="display:grid; grid-template-columns:300px 1fr; gap:28px;">
+
+    <!-- Kartu jam + tombol absen -->
+    <div>
+      <div class="attendance-card">
+        <div style="font-size:13px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);font-weight:700">Waktu Saat Ini</div>
+        <div class="attendance-time" id="clock-display">00:00:00</div>
+        <div class="attendance-date" id="date-display">Senin, 1 Jan 2024</div>
+        <div id="attendance-actions" style="margin-top:24px;display:flex;flex-direction:column;gap:10px;"></div>
+      </div>
+    </div>
+
+    <!-- Riwayat absensi — hanya Tanggal & Waktu -->
+    <div class="content-card" style="margin:0">
+      <div class="card-header"><span class="card-title">Riwayat Absensi</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Tanggal</th>
+              <th>Waktu Absen</th>
+            </tr>
+          </thead>
+          <tbody id="attendance-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
